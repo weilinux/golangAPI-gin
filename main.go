@@ -29,25 +29,6 @@ func main() {
 	go func() {
 		database.Connect()
 	}()
-/*
-	//map path to handler function
-	router.GET("/ping", func(c *gin.Context) {
-		//gin.H gin.Header的意思
-		c.JSON(200, gin.H{
-			"message": "ping ok",
-			"message2": "success",
-		})
-
-		
-	})
-	router.POST("/ping/:id", func(c *gin.Context) {
-		id := c.Param("id")
-		c.JSON(200, gin.H{
-			"id": id,
-		})
-
-	})
-	*/
 
 	err := router.Run(":8000")
 	if err != nil {
